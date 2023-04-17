@@ -26,26 +26,45 @@
                     .fail((xhr, status, err) => reject(status + err));
                 });
             }
+            function request(url) {
+               $.getJSON(url, function(response) {
+                    generator.next(response);
+                });
+}
+            function* getData() {
+    var entry1 = yield request('https://jsonplaceholder.typicode.com/posts/1');
+    var data1  = JSON.parse(entry1);
+    var entry2 = yield request('https://jsonplaceholder.typicode.com/posts/3');
+    var data2  = JSON.parse(entry2);
+}
 
+var generator = getData();
             var urlPromises = urls.map(fetchJSON);
+
 
 
             $(document).ready(function(){
                 $('#btn').click(function(){
+
+                    generator.next()
+
+                    generator.next()
+
+                    generator.next()
                     // Not Using the fetch JSON from Input as we already have URLS in an array 
                     // fetchJSON($('#urlOpener').val())
-                    Promise.all(urlPromises)
-                    .then(resonse=>{
-                        resonse.map(row=>$('#result').text(`The id ${row.id} 
-                        \nThe User Id  ${row.userId}
-                        \nThe Body  ${row.body}                        
-                        \n Title  ${row.title}`+$('#result').text()
+                    // Promise.all(urlPromises)
+                    // .then(resonse=>{
+                    //     resonse.map(row=>$('#result').text(`The id ${row.id} 
+                    //     \nThe User Id  ${row.userId}
+                    //     \nThe Body  ${row.body}                        
+                    //     \n Title  ${row.title}`+$('#result').text()
                         
-                        )
+                    //     )
                         
-                        )
-                    })
-                    .catch(error=>$('#result').html(error))
+                    //     )
+                    // })
+                    // .catch(error=>$('#result').html(error))
                 })
             })
 

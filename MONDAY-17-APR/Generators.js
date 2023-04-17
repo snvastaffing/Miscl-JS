@@ -28,8 +28,21 @@ function * doGenerator(){  // this esterik denotes that it is a generator
     console.log("about to finish")
 }
 
-const generatorObj = doGenerator()
-console.log(generatorObj.next().value)
+
+function request(url) {
+    getJSON(url, function(response) {
+        generator.next(response);
+    });
+}
+
+function* getData() {
+    var entry1 = yield request('http://some_api/item1');
+    var data1  = JSON.parse(entry1);
+    var entry2 = yield request('http://some_api/item2');
+    var data2  = JSON.parse(entry2);
+}
+// const generatorObj = doGenerator()
+// console.log(generatorObj.next().value)
 // console.log(generatorObj.next().value)
 // console.log(generatorObj.next().value)
 // console.log(generatorObj.next().value)
