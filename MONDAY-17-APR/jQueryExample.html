@@ -13,6 +13,12 @@
 
     <script  src="https://code.jquery.com/jquery-3.6.4.js"></script>
     <script>
+
+            let urls = []
+            for(let nums =1; nums<10; nums++){
+                urls.push(`https://jsonplaceholder.typicode.com/posts/${nums}`)
+            }
+
             var fetchJSON = function(url) {  
                 return new Promise((resolve, reject) => {
                     $.getJSON(url)
@@ -21,15 +27,23 @@
                 });
             }
 
+            var urlPromises = urls.map(fetchJSON);
+
+
             $(document).ready(function(){
                 $('#btn').click(function(){
-                    fetchJSON($('#urlOpener').val())
+                    // Not Using the fetch JSON from Input as we already have URLS in an array 
+                    // fetchJSON($('#urlOpener').val())
+                    Promise.all(urlPromises)
                     .then(resonse=>{
                         resonse.map(row=>$('#result').text(`The id ${row.id} 
                         \nThe User Id  ${row.userId}
                         \nThe Body  ${row.body}                        
-                        \n Title  ${row.title}`+$('#result').text()))
+                        \n Title  ${row.title}`+$('#result').text()
                         
+                        )
+                        
+                        )
                     })
                     .catch(error=>$('#result').html(error))
                 })
