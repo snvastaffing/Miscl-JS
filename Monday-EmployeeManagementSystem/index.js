@@ -1,6 +1,8 @@
 
 import Employee from "./Model/Employee.js"
-import readLineAsync from "./Utils/ReadUtils.js"
+import readLineAsync, { isValidString }  from "./Utils/ReadUtils.js"
+
+
 // import {uuidv4} from "uuid"
 import { v4 as uuidv4 } from 'uuid';
 
@@ -21,7 +23,7 @@ const main= async()=>
         displayUserMenu();
         let userOpt = await readLineAsync('Please enter the choice from above menu !')
         // here we will perfrom the check that the value should pe proper and validated 
-        while(userOpt){
+        while(isValidString(userOpt)){
             switch(userOpt){
                 case "1":
                     {
