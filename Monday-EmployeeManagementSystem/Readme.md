@@ -32,6 +32,7 @@ user is entering from above menu lets say 1 i.e to add an Employee
     4. Enter the Email 
     user -> dheeraj.singh@snva.com
 
-###    after this the message should be displayed the entries have been saved in (ID of employee) i.e [Employee id].txt -- so that will ve 1.txt, 2.txt,3.txt, 4.txt  and the logic hould be built in such a way that employee id should be generated automatically based on the last entry if last was 5.txt then next should be 6.txt ? talk to me if have any doubts ?
+
+after this the message should be displayed the entries have been saved in (ID of employee) i.e [Employee id].txt -- so that will ve 1.txt, 2.txt,3.txt, 4.txt  and the logic hould be built in such a way that employee id should be generated automatically based on the last entry if last was 5.txt then next should be 6.txt ? talk to me if have any doubts ?
     
    
