@@ -1,3 +1,6 @@
+
+import readLineAsync from "./Utils/ReadUtils"
+
 // define the start point of the program 
 
 const displayUserMenu =()=>{
@@ -10,7 +13,24 @@ const displayUserMenu =()=>{
     console.log("press ~ to exit")
 }
 
-const main=()=>
-    
+const main=async ()=>
     displayUserMenu();
-    main()
+    const userOpt = await readLineAsync('Please enter the choice from above menu !')
+    // here we will perfrom the check that the value should pe proper and validated 
+    while(isValidStringUserOptions(userOpt)){
+        switch(userOpt){
+            case "1":
+                console.log("Addingf the employee")
+                    // here call the add logic 
+                break;
+            case "2":
+                    // here call the add logic 
+                    console.log("finding the employee by Id")
+                break;
+            default :
+                break;
+        }
+    }
+    // read thew input to proceed further 
+
+main()
