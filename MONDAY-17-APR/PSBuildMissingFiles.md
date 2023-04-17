@@ -2,8 +2,8 @@
 ### Here you need to build a module where in you have to create a data structure with below data :- 
 
 1. Name-String 
-2. Age-integer
-3. Id-integer
+2. Age-Integer
+3. Id-String
 4. Contact-String 
 5. Email-String 
 
@@ -15,7 +15,12 @@ Build a program that shall print a user meny first as below :-
 3. View Employee By Name 
 4. View Employee By Email
 5. View All 
-6. Show Missing Database -- ? here for thsi we do not have the access to the database here so you will create a text file for each employee, example 
+
+Need to make seperate folders as modules they need to group/ungroup to similar/differnt class of code to be able to make the code more maintainable 
+
+Task 1 Need to make services folder so that you keep file writing and file readers and file browser code  as Signletom or factory pattern.
+
+Task 2 Show Missing Database -- ? here for thsi we do not have the access to the database here so you will create a text file for each employee, example 
 user is entering from above menu lets say 1 i.e to add an Employee 
     in the add employee user will be prompted to entr the below details 
     1. Enter the Name 
