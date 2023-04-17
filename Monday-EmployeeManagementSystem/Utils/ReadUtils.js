@@ -5,7 +5,7 @@ const readLine = createInterface({
     output: process.stdout
 });
 
-function readLineAsync ( msg) {
+export default function readLineAsync ( msg) {
     return new Promise(resolve=>{
       readLine.question(msg, userEntry=>{
         resolve(userEntry);
